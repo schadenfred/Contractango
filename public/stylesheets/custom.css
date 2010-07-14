@@ -90,7 +90,7 @@ ul.navigation {
 .round {
   margin: 0;
   -moz-border-radius:    10px;
-  -webkit-border-radius: 10px;
+  /*-webkit-border-radius: 10px;*/
 }
 
 
@@ -124,7 +124,7 @@ td.sidebar {
   width: 30%;
   padding: 1em;
   vertical-align: top;
-  background: #ffc/*#CCFF99*/;
+  background: #CCFF99;
 }
 
 .profile img.gravatar {
