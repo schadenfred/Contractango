@@ -124,7 +124,7 @@ td.sidebar {
   width: 30%;
   padding: 1em;
   vertical-align: top;
-  background: #ffc;
+  background: #ffc/*#CCFF99*/;
 }
 
 .profile img.gravatar {
