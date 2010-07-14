@@ -29,12 +29,14 @@ Spork.prefork do
     # examples within a transaction, comment the following line or assign false
     # instead of true.
     config.use_transactional_fixtures = true
+
+    ### Part of a Spork hack. See http://bit.ly/arY19y
+    # Emulate initializer set_clear_dependencies_hook in
+    # railties/lib/rails/application/bootstrap.rb
+    ActiveSupport::Dependencies.clear
   end
 end
 
 Spork.each_run do
-  # This code will be run each time you run your specs.
-  # This file is copied to ~/spec when you run 'rails generate rspec'
-  # from the project root directory.
 end
 
