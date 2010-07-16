@@ -1,14 +1,16 @@
 <div id="header" class="round">
   <%= link_to logo, root_path %>
   <ul class="navigation round shadow">
-    <li><%= link_to_unless_current "Home", root_path %></li> |
+    <li><%= link_to_unless_current "home", root_path %></li> |
     <% if signed_in? %>
-    <li><%= link_to_unless_current "Profile", current_user %></li> |
+    <li><%= link_to_unless_current "users", users_path %></li> |
+    <li><%= link_to_unless_current "profile", current_user %></li> |
+    <li><%= link_to_unless_current "settings", edit_user_path(current_user) %></li> |
     <% end %>
     <% if signed_in? %>
-    <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+    <li><%= link_to "sign out", signout_path, :method => :delete %></li>
     <% else %>
-    <li><%= link_to "Sign in", signin_path %></li>
+    <li><%= link_to "sign in", signin_path %></li>
     <% end %>
   </ul>
 </div>
