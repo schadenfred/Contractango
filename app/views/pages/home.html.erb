@@ -1,15 +1,29 @@
-<h1>Contractango Home</h1>
-  <p>
-    This is the home page.
-  <p>
-    When user is logged in, it will show a form to begin the review process,
-    allowing user to do one of two things:
-  <p>1) Review a business partner.
-  <p>2) Request a review from a business partner.
-  <p>
-  <p>
-    When user is NOT loggedin, it will show a registration page.
-  </p>
-  <%= link_to "Sign up now!", signup_path, :class => "large awesome round" %>
-</body>
+<% if signed_in? %>
+  <table class="front" summary="For signed-in users">
+    <tr>
+      <td class="main">
+        <h1 class="micropost">What's up?</h1>
+        <%= render 'shared/micropost_form' %>
+        <%= render 'shared/feed' %>
+      </td>
+      <td class="sidebar round shadowinvert">
+        <%= render 'shared/user_info' %>
+      </td>
+    </tr>
+  </table>
+<% else %>
+  <h1>Contractango Home</h1>
+    <p>
+      This is the home page.
+    <p>
+      When user is logged in, it will show a form to begin the review process,
+      allowing user to do one of two things:
+    <p>1) Review a business partner.
+    <p>2) Request a review from a business partner.
+    <p>
+    <p>
+      When user is NOT loggedin, it will show a registration page.
+    </p>
+    <%= link_to "Sign up now!", signup_path, :class => "large awesome round" %>
+<% end %>
 
